@@ -1,0 +1,665 @@
+/* CSS Document */
+/*===デザイン定義===*/
+/*
+カラー指定：赤（#E2090D）、青（#083e7a）、白（#ffffff）、ベージュ（#f3e4d0）
+フォントカラー：#222222
+フォント：日本語（游ゴシック体）、アルファベット（Cabin Sketch, cursive）、数字（検討中）
+フォントサイズ：英語見出し（）、日本語サブ見出し（）、通常テキスト、
+
+
+/*プログラム　カテゴリ別カラー
+・食べる：#ED2C2C（赤）
+・ステージ：#FDFD6A（黄色）
+・体験する：#B8F06A（黄緑）
+・知る：#267BEF（青）
+・ショップ：#FFB100（オレンジ）*/
+
+/*ローディング中画像*/
+#loader{
+    width: 80px;
+    height: 80px;
+    display: none;
+    position: fixed;
+    _position: absolute;     /* IE6対策 */
+    top: 50%;
+    left: 50%;
+    margin-top: -40px;       /* heightの半分のマイナス値 */
+    margin-left: -40px;      /* widthの半分のマイナス値 */
+    z-index: 10;             /* #fadeより多い値を入れて下さい */
+}
+#loader p{
+	font-family: 'Cabin Sketch', cursive;
+	font-size:20px;
+	letter-spacing: 3px;
+	margin-top:10px;
+}
+#fade{
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: #f3e4d0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 5;              /* #loaderより少ない値を入れて下さい */
+}
+/*ここまでローディング中画像*/
+html{
+	width:100%;
+	font-size:65%;
+	font-family: 'Montserrat',"游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+	/*font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";*/
+}
+body{
+	width:100%;
+	/*background-color:#f3e4d0;*/
+	color:#222222;
+	background-color:#f3e4d0;
+}
+
+/*===共通===*/
+.midashi h2{
+	font-size:45px;
+	letter-spacing: 0.1em;
+	font-family: 'Cabin Sketch', cursive;
+}
+.midashi_under{
+	font-size:15px;
+	margin-top:-5px;
+	font-weight:bold;
+	font-family: 'Montserrat',"游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+	text-align: center;
+}
+/*見出し装飾背景*/
+.midashi{
+	background: url(../img/kyotsu/midashikazari@2x.png) no-repeat;
+	background-size: 960px;
+	background-position:center;
+	text-align: center;
+	margin-bottom:55px;
+	/*margin-bottom:60px;*/
+}
+.red{
+	color:#E2090D
+}
+
+/*ヘッダー*/
+header{
+	display:block;
+	width:100%;
+	height:115px;
+	position:fixed;
+	top:0;
+	z-index:3;
+	-webkit-backface-visibility;
+	backface-visibility:hidden;
+	background-color:#ffffff;
+	transition: .5s; /*ここにtransitionを入れることで、スクロール時にゆっくり上に消える。*/
+}
+.line{
+	width:100%;
+	height:15px;
+	background: url(../img/line.png) no-repeat;
+	background-size:100%; 
+}
+.mainhaikei img{
+	width:100%;
+	margin:0 auto;
+	position:relative;
+	top:10px;
+}
+
+.header-inner{
+	padding-bottom:10px;
+	/*width:1080px;*/
+	margin:0 auto;
+	height:60px;
+	padding-top:15px;
+}
+.header-inner a{
+	color:#222222;
+	font-weight:bold;
+	height:30px;
+	font-size: 1.2rem;
+}
+.header-top{
+	width:100%;
+	height:30px;
+	float:right;
+	display:block;
+	margin-bottom:5px;
+	text-align: right;
+}
+.header-bottom{
+	width:100%;
+	height:30px;
+}
+.button_otoiawase{
+	font-family: 'Montserrat',"游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+	border-radius:5px;
+	padding:8px 20px;
+	font-size:12px;
+	letter-spacing:.09em;
+	width:250px;
+	background-color:#E2090D;
+	color:#ffffff!important;
+	margin-right:10px;
+}
+.button_faq{
+	font-family: 'Montserrat',"游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+	border-radius:5px;
+	padding:8px 20px;
+	font-size:12px;
+	letter-spacing:.09em;
+	width:250px;
+	background-color:#444444;
+	color:#ffffff!important;
+	margin-right:10px;
+	
+}
+.nav_list{
+	width: 995px;
+	margin:0 auto;
+	text-align: center;
+	height:50px;
+}
+.nav_list li{
+	display: inline-block;
+	margin-right:40px;
+	float:left;
+	letter-spacing: 0.1em;
+	font-family: 'Montserrat',"游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+}
+.nav_list li a:hover{
+	color:#E2090D;
+}
+.nav_list .nav_link{
+	font-size:16px;
+	letter-spacing: 0.1em;
+}
+.nav_jap{
+	font-size:11px;
+	margin-top:4px;
+	font-family: 'Montserrat',"游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+	letter-spacing: 0px;
+	font-weight:bold;
+}
+.homelogo{
+	width: 110px;
+	float:left;
+}
+.homelogo img{
+	position: relative;
+	left:0;
+	top:-25px;
+	width:110px;
+	height:auto;
+	margin:0 auto;
+	
+}
+
+/* メイン画像*/
+.maingazo{
+	position: relative;
+	overflow: hidden;
+}
+
+
+.maingazo .gazo img{
+    display: block;
+    width: 100%;
+    height:  auto;
+    padding-top: 115px;
+}
+.maingazo .logo img{
+ 	position: absolute;/*絶対配置*/
+	width:310px;
+	top: 60%;
+	left: 50%;
+	-ms-transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	margin:0;/*余計な隙間を除く*/
+	padding:0;/*余計な隙間を除く*/
+    
+}
+
+
+
+
+/*===コンテンツエリア===*/
+
+.contents_wrap{
+	width:100%;
+	height:auto;
+	background: #f3e4d0;
+	position: relative;
+}
+/*コンテンツ見出し:*/
+.contents_midashiarea{
+	margin-top:80px;
+	width:1050px;
+}
+
+#mainbody{
+	width: 100%;
+}
+/*=====タブ切り替え全体のスタイル=====*/
+.tabs {
+	margin-top: 50px;
+	padding-bottom: 40px;
+	/*background-color: #ffffff;*/
+	/*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+	width: 1050px;
+	margin: 0 auto;
+}
+/*タブのスタイル*/
+.yubi{
+	cursor: pointer;
+}
+.tab_item {
+	width: calc(100%/6.4); /*適切5.1*/
+	height: 50px;
+	background-color: #eee;
+	line-height: 54px;
+	font-size: 17px;
+	text-align: center;
+	color: #565656;
+	display: block;
+	float: left;
+	text-align: center;
+	font-weight: bold;
+	transition: all 0.2s ease;
+	border-radius: 10px 10px 0 0 / 10px 10px 0 0;
+	-webkit-border-radius: 10px 10px 0 0 / 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0 / 10px 10px 0 0;
+	margin-right:2px;	
+}
+
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+	display: none;
+}
+
+/*=====タブ切り替えの中身のスタイル=====*/
+.tab_content {
+	height:1070px;
+	display: none;
+	clear: both;
+	overflow: hidden;
+}
+.tab_content_description{
+	width: 1050px;
+	margin: 0 auto;
+	background: #fff;
+	height:1020px;
+	margin:0;
+	padding-top:40px;
+	/*左下と右下*/
+	border-radius: 0 0 10px 10px / 0 0 10px 10px;
+	-webkit-border-radius: 0 0 10px 10px / 0 0 10px 10px;
+	-moz-border-radius: 0 0 10px 10px / 0 0 10px 10px;
+	/*右上のみ*/
+	border-top-right-radius : 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+}	
+.taberu{/*食べる*/
+	background-color: #ED2C2C;
+	color: #fff;
+}
+.taberu:hover{
+	background-color: #D80707;
+}
+.stage{/*ステージ*/
+	background-color: #FAE362;
+	color: #fff;
+}
+.stage:hover{
+	background-color: #F4D73D;
+}
+.experience{/*体験する*/
+	background-color: #B8F06A;
+	color: #fff;
+}
+.experience:hover{
+	background-color: #A7D862;
+}
+.know{/*知る*/
+	background-color: #267BEF;
+	color: #fff;
+}
+.know:hover{
+	background-color: #216ACE;
+}
+.shop{/*ショップ*/
+	background-color: #FFB100;
+	color: #fff;
+}
+.shop:hover{
+	background-color: #F5921E;
+}
+/*選択されているタブのコンテンツのみを表示*/
+#taberu:checked ~ #taberu_content,
+#stage:checked ~ #stage_content,
+#experience:checked ~ #experience_content,
+#know:checked ~ #know_content,
+#shop:checked ~ #shop_content{
+	display: block;
+	
+}
+
+/*=====選択されているタブのスタイルを変える=====*/
+/*タブカラー*/
+.tabs input:checked + .taberu {/*食べる*/
+	background-color: #fff;
+	color: #ED2C2C;
+	border-radius: 10px 10px 0 0 / 10px 10px 0 0;
+	-webkit-border-radius: 10px 10px 0 0 / 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0 / 10px 10px 0 0;
+}
+.tabs input:checked + .stage {/*ステージ*/
+	background-color: #fff;
+	color: #FAE362;
+	border-radius: 10px 10px 0 0 / 10px 10px 0 0;
+	-webkit-border-radius: 10px 10px 0 0 / 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0 / 10px 10px 0 0;
+}
+.tabs input:checked + .experience {/*体験する*/
+	background-color: #fff;
+	color: #B8F06A;
+	border-radius: 10px 10px 0 0 / 10px 10px 0 0;
+	-webkit-border-radius: 10px 10px 0 0 / 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0 / 10px 10px 0 0;
+}
+.tabs input:checked + .know {/*知る*/
+	background-color: #fff;
+	color: #267BEF;
+	border-radius: 10px 10px 0 0 / 10px 10px 0 0;
+	-webkit-border-radius: 10px 10px 0 0 / 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0 / 10px 10px 0 0;
+}
+.tabs input:checked + .shop {/*ショップ*/
+	background-color: #fff;
+	color: #FFB100;
+	border-radius: 10px 10px 0 0 / 10px 10px 0 0;
+	-webkit-border-radius: 10px 10px 0 0 / 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0 / 10px 10px 0 0;
+}
+
+/*===テキストエリア===*/
+.text_box{
+	/*background:#eee;*/
+	width:960px;
+	height:210px;
+	margin-bottom:30px;
+}
+.gazo_area{
+	float:left;
+	width:300px;
+	height:210px;
+	overflow: hidden;
+}
+.text_area{
+	height:170px;
+	width:615px;
+	float:right;
+	padding:20px;
+	/*background: #666;*/
+	text-align: left;
+}
+
+/*プログラムのタブ*/
+/*共通*/
+.tabu{
+	width:60px;
+	color:#fff;
+	padding:8px 10px 8px 10px;
+	border-radius:5px;
+	font-weight:bold;
+	font-size:14px;
+	text-align: center;
+	margin:0 5px 0 0;
+	float:left;
+}
+.text_area .text{
+	text-align: left;
+}
+
+.text_area .program_time{
+	color:#222;
+	font-size:14px;
+	font-weight:bold;
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+	width:350px;
+	padding:8px 10px 8px 10px;
+	margin:0;
+	letter-spacing: 2px;
+}
+.text_area_inner{
+	margin-top:13px;
+	font-family: 'Montserrat',"游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+	font-size:14px;
+	line-height: 23px;
+}
+.program_title{
+	font-size:18px;
+	font-weight:bold;
+	color:#222;
+	padding-bottom:10px;
+	letter-spacing: 1px;
+}
+
+/*プログラム　カテゴリ別カラー
+・食べる：#ED2C2C（赤）
+・ステージ：#FDFD6A（黄色）
+・体験する：#B8F06A（黄緑）
+・知る：#267BEF（青）
+・ショップ：#FFB100（オレンジ）*/
+
+/*食べる*/
+.taberu_tabu{
+	background:#ED2C2C;
+}
+.taberu_text_box a{
+	color:#ED2C2C;
+}
+.taberu_text_box .text_area .program_title{
+	color:#ED2C2C;
+}
+/*ステージ*/
+.stage_tabu{
+	background:#FAE362;
+}
+.stage_text_box a{
+	color:#FAE362;
+}
+.stage_text_box .text_area .program_title{
+	color:#FAE362;
+}
+/*体験する*/
+.experience_tabu{
+	background:#B8F06A;
+}
+.experience_text_box a{
+	color:#B8F06A;
+}
+.experience_text_box .text_area .program_title{
+	color:#B8F06A;
+}
+/*知る*/
+.know_tabu{
+	background:#267BEF;
+}
+.know_text_box a{
+	color:#267BEF;
+}
+.know_text_box .text_area .program_title{
+	color:#267BEF;
+}
+/*ショップ*/
+.shop_tabu{
+	background:#FFB100;
+}
+.shop_text_box a{
+	color:#FFB100;
+}
+.shop_text_box .text_area .program_title{
+	color:#FFB100;
+}
+
+/* スマホだけに適用するCSS */
+@media screen and ( max-width:479px )
+{
+	.tab_content_description{
+		width: 100%;
+		height:auto;
+	}
+	.tab_content{
+		height:auto;
+	}
+	.contents{
+		width: 100%;
+	}
+	.tabs{
+		width: 100%;
+	}
+	.tab_item{
+		width: calc(100%/5.4);
+		height:31px;
+		line-height:33px;
+		font-size:13px;
+	}
+	.gazo_area{
+		width:100px;
+		height:auto;
+	}
+	.gazo_area img{
+		width:100px;
+	}
+	.text_box{
+		width:95%;
+		height:190px;
+		margin-bottom:0px;
+		padding-bottom:10px;
+	}
+	.text_area{
+		width:68%;
+		height:auto;
+		padding:0px;
+	}
+	.text_area .program_time{
+		font-size: 10px;
+		width:95%;
+	}
+	.tabu{
+		width: 48px;
+		font-size: 12px;
+		padding:7px 10px 7px 10px;
+	}
+	.program_title{
+		font-size: 16px;
+		padding-bottom:1px;
+	}
+	.text_area .text{
+		font-size: 11px;
+		line-height:19px;
+	}
+}
+/*===フッターエリア===*/
+#footerarea{
+	background: #083e7a;
+	padding-top:40px;
+	padding-bottom:30px;
+	text-align: center;
+	margin:0 auto;
+	color:#fff;
+	font-family: 'Montserrat',"游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+}
+#footerarea a{
+	color:#fff;
+}
+.footer .midashi{
+	text-align: center;
+	color:#222!important;
+}
+.footer .footer_logo img{
+	text-align: center;
+}
+/*フッターテキストエリア*/
+.footer_title{
+	font-size:16px;
+	line-height: 10px;
+	padding-bottom:10px;
+	font-weight:bold;
+	letter-spacing: 1px;
+}
+.footer_text{
+	padding-top:15px;
+	color:#fff;
+	line-height: 18px;
+	font-size:12px;
+	letter-spacing: 1px;
+}
+
+/*フッターカテゴリエリア*/
+/*===フッター共通===*/
+.footer_kategoribox{
+	width:240px;
+	height:160px;
+	float:left;
+	margin:10px;
+}
+.footer_kategori_title{
+	font-size:20px;
+	font-family: 'Cabin Sketch', cursive;
+	letter-spacing: 1px;
+	text-align: left;
+	width:240px;
+	height:20px;
+	border-bottom:1px #fff solid;
+	padding-bottom: 6px;
+}
+.footer_kategori_text{
+	text-align: left;
+	font-size:13px;
+	letter-spacing: 1px;
+	line-height: 20px;
+}
+
+.footer_kategori{
+	width:1040px;
+	height:165px;
+	margin:0 auto;
+	margin-top:30px;
+	margin-bottom:30px;
+	text-align: center;
+	overflow: hidden;
+	
+}
+
+/*CONTENTSエリア*/
+.contents{
+	overflow:hidden;
+	text-align: left;
+
+}
+.contents_left{
+	float:left;
+	width:120px;
+}
+.contents_right{
+	float:right;
+	width:120px;
+}
+
+.footer_copy{
+	text-align: right;
+	padding-right:10px;
+	font-size:10px;
+}
+
+
+
+
+
